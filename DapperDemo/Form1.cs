@@ -24,5 +24,51 @@ namespace DapperDemo
             var customerObtendiro = customer.obtenerTodo();
             dataGridView1.DataSource = customerObtendiro;
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var obtenerId = customer.ObtenerPorId(txtBuscarID.Text);
+            //dataGridView1.DataSource = new List<Customer> { obtenerId };
+            ObtenerDatos(obtenerId);
+        }
+
+        private void ObtenerDatos(Customer customer)
+        {
+            txtCustomerID.Text = customer.CustomerID;
+            txtCompaneName.Text = customer.CompanyName;
+            txtContactName.Text = customer.ContactName;
+            txtContacTitle.Text = customer.ContactTitle;
+            txtAdress.Text = customer.Address;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtCustomerID.Text = "";
+            txtCompaneName.Text = "";
+            txtContactName.Text = "";
+            txtContacTitle.Text = "";
+            txtAdress.Text = "";
+
+
+        }
+
+        private Customer ObtenerCliente()
+        {
+            var nuevo = new Customer
+            {
+                CustomerID = txtCustomerID.Text,
+                CompanyName = txtCompaneName.Text,
+                ContactTitle=txtContacTitle.Text,
+                ContactName=txtContactName.Text,
+                Address=txtAdress.Text,
+            };
+            return nuevo;
+        }
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            var nuevoCliente = ObtenerCliente();
+            var insertados = customer.InsertarClientes(nuevoCliente);
+            MessageBox.Show("Se inserto");
+        }
     }
 }
