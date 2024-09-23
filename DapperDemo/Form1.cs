@@ -41,15 +41,17 @@ namespace DapperDemo
             txtAdress.Text = customer.Address;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Limpiar()
         {
             txtCustomerID.Text = "";
             txtCompaneName.Text = "";
             txtContactName.Text = "";
             txtContacTitle.Text = "";
             txtAdress.Text = "";
-
-
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
 
         private Customer ObtenerCliente()
@@ -69,6 +71,17 @@ namespace DapperDemo
             var nuevoCliente = ObtenerCliente();
             var insertados = customer.InsertarClientes(nuevoCliente);
             MessageBox.Show("Se inserto");
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var eliminados = customer.EliminarCLiente(txtCustomerID.Text);
+
+            if (eliminados == 1)
+            { 
+                MessageBox.Show("Eliminado");
+                Limpiar();
+            }
         }
     }
 }

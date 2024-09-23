@@ -45,6 +45,7 @@
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,12 +54,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(31, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(566, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(581, 188);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(511, 223);
+            this.btnCargar.Location = new System.Drawing.Point(31, 206);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(86, 23);
             this.btnCargar.TabIndex = 1;
@@ -68,7 +69,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(194, 249);
+            this.btnBuscar.Location = new System.Drawing.Point(194, 259);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 34);
             this.btnBuscar.TabIndex = 2;
@@ -78,7 +79,7 @@
             // 
             // txtBuscarID
             // 
-            this.txtBuscarID.Location = new System.Drawing.Point(69, 258);
+            this.txtBuscarID.Location = new System.Drawing.Point(69, 268);
             this.txtBuscarID.Name = "txtBuscarID";
             this.txtBuscarID.Size = new System.Drawing.Size(113, 20);
             this.txtBuscarID.TabIndex = 3;
@@ -114,7 +115,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 261);
+            this.label1.Location = new System.Drawing.Point(18, 271);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 8;
@@ -174,7 +175,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(816, 12);
+            this.button1.Location = new System.Drawing.Point(799, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 25);
             this.button1.TabIndex = 16;
@@ -192,11 +193,22 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(502, 233);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(110, 21);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.Text = "EliminarCliente";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 326);
+            this.ClientSize = new System.Drawing.Size(867, 326);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
@@ -241,6 +253,7 @@
         private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 

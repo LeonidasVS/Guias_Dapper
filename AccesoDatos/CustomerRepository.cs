@@ -87,5 +87,22 @@ namespace AccesoDatos
                 return insertados;
             }
         }
+
+        public int EliminarCLiente(string id)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String Eliminar = "";
+                Eliminar = Eliminar + "DELETE FROM [dbo].[customers] " + "\n";
+                Eliminar = Eliminar + "WHERE  CustomerID = @CustomerID";
+
+                var eliminados = conexion.Execute(Eliminar, new
+                {
+                    CustomerID=id
+                });
+
+                return eliminados;
+            }
+        }
     }
 }
