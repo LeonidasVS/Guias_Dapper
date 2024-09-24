@@ -104,5 +104,31 @@ namespace AccesoDatos
                 return eliminados;
             }
         }
+
+        public int Actualizados(Customer customer)
+        {
+            using (var conexion=DataBase.GetSqlConnection())
+            {
+                String ActualizarPersona = "";
+                ActualizarPersona = ActualizarPersona + "UPDATE [dbo].[Customers] " + "\n";   
+                ActualizarPersona = ActualizarPersona + "   SET [CustomerID] = @CustomerID" + "\n"; 
+                ActualizarPersona = ActualizarPersona + "      ,[CompanyName] = @CompanyName" + "\n"; 
+                ActualizarPersona = ActualizarPersona + "      ,[ContactName] = @ContactName" + "\n"; 
+                ActualizarPersona = ActualizarPersona + "      ,[ContactTitle] = @ContactTitle" + "\n";       
+                ActualizarPersona = ActualizarPersona + "      ,[Address] = @Address" + "\n";
+                ActualizarPersona = ActualizarPersona + $" WHERE CustomerID = @CustomerID";
+
+                var actualizados = conexion.Execute(ActualizarPersona, new
+                {
+                    CustomerID = customer.CustomerID,
+                    CompanyName=customer.CompanyName,
+                    ContactName=customer.ContactName,
+                    ContactTitle=customer.ContactTitle,
+                    Address=customer.Address
+                });
+
+                return actualizados;
+            }
+        }
     }
 }

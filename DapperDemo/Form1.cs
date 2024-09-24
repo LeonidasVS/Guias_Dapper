@@ -83,5 +83,17 @@ namespace DapperDemo
                 Limpiar();
             }
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            var actualiza = ObtenerCliente();
+            var actualizados = customer.Actualizados(actualiza);
+
+            if (actualizados==1)
+            {
+                MessageBox.Show("Actualizado");
+                Limpiar();
+            }
+        }
     }
 }
